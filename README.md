@@ -19,13 +19,13 @@ A solution where the Dev_Raspi can send events to the broker and the Dev_Laptop 
   
   7. Run the Publisher on Dev_RaspberryPi using the following command
   
-      java -cp raspi-mqtt-client.jar com.knoldus.Publisher
+      java -cp raspi-mqtt-client.jar com.knoldus.MQTTPublisher
 
     This will start the publisher to sending the temperature events to broker. 
   
   8. Run the Subscriber on Dev_Laptop using the following command
   
-      java -cp raspi-mqtt-client.jar com.knoldus.Subscriber
+      java -cp raspi-mqtt-client.jar com.knoldus.MQTTSubscriber
 
 ##Sumary 
 
