@@ -25,14 +25,14 @@ object MQTTSubscriber extends App {
     val topic = "TemperatureEvent"
     val persistence = new MemoryPersistence
     val client = new MqttClient(brokerUrl, MqttClient.generateClientId, persistence)
-    client.connect
+    client.connect()
     client.subscribe(topic)
     val callback = new MqttCallBackImpl
     client.setCallback(callback)
 
   }
 
-  subscribeToCommands
+  subscribeToCommands()
 }
 
 class MqttCallBackImpl extends MqttCallback {
