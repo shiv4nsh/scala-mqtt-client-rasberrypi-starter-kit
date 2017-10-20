@@ -33,8 +33,8 @@ object MQTTPublisher extends App {
       client = new MqttClient(brokerUrl, MqttClient.generateClientId, persistence)
       client.connect()
       val msgTopic = client.getTopic(topic)
-      val message = new MqttMessage(getMessage.getBytes("utf-8"))
       while (true) {
+        val message = new MqttMessage(getMessage.getBytes("utf-8"))
         msgTopic.publish(message)
         println(s"Publishing the data topic ${msgTopic.getName} message: ${message.toString}")
         Thread.sleep(1000)
@@ -48,5 +48,5 @@ object MQTTPublisher extends App {
     }
   }
 
-  publishToserver
+  publishToserver()
 }
